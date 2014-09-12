@@ -12,7 +12,7 @@ import java.util.Random;
 public class SquaresLayout extends FrameLayout {
 	private float openAmount;
 
-	private final RectF[][] squares = new RectF[4][3];
+	private final RectF[][] squares = new RectF[12][9];
 	private final RectF[][] transformedSquares = new RectF[squares.length][squares[0].length];
 	private float[][] itemRandomnessFactors = new float[squares.length][squares[0].length];
 	private final Matrix matrix = new Matrix();
