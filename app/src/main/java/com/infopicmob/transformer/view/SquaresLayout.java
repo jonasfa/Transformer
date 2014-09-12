@@ -10,9 +10,12 @@ import android.widget.FrameLayout;
 import java.util.Random;
 
 public class SquaresLayout extends FrameLayout {
+	public static final int LINES = 12;
+	public static final int ROWS = 9;
+
 	private float openAmount;
 
-	private final RectF[][] squares = new RectF[12][9];
+	private final RectF[][] squares = new RectF[LINES][ROWS];
 	private final RectF[][] transformedSquares = new RectF[squares.length][squares[0].length];
 	private float[][] itemRandomnessFactors = new float[squares.length][squares[0].length];
 	private final Matrix matrix = new Matrix();
