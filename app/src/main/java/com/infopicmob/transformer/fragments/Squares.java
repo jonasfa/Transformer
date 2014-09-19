@@ -25,13 +25,13 @@ public class Squares extends Fragment {
 
 		view.findViewById(R.id.animateForward).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				ObjectAnimator.ofObject(squares, "openAmount", new FloatEvaluator(), 1).setDuration(600).start();
+				ObjectAnimator.ofObject(squares, "openAmount", new FloatEvaluator(), 1).setDuration(800).start();
 			}
 		});
 
 		view.findViewById(R.id.animateBackwards).setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				ObjectAnimator.ofObject(squares, "openAmount", new FloatEvaluator(), 0).setDuration(600).start();
+				ObjectAnimator.ofObject(squares, "openAmount", new FloatEvaluator(), 0).setDuration(800).start();
 			}
 		});
 	}

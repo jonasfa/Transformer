@@ -10,8 +10,8 @@ import android.widget.FrameLayout;
 import java.util.Random;
 
 public class SquaresLayout extends FrameLayout {
-	public static final int LINES = 12;
-	public static final int ROWS = 9;
+	public static final int LINES = 4;
+	public static final int ROWS = 3;
 
 	private float openAmount;
 
@@ -107,5 +107,6 @@ public class SquaresLayout extends FrameLayout {
 			}
 		}
 	}
+
 
 }

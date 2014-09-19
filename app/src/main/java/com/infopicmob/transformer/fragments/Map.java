@@ -26,7 +26,7 @@ public class Map extends Fragment {
 		final ScrollView scroll = (ScrollView) view.findViewById(R.id.scroll);
 		scroll.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
 			public void onScrollChanged() {
-				accordion.setFolding(scroll.getScrollY() / (float) accordion.getHeight() / 1.15f);
+				accordion.setFolding(scroll.getScrollY() / (float) accordion.getHeight());
 			}
 		});
 	}

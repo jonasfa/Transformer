@@ -15,7 +15,7 @@
 
     <com.infopicmob.transformer.view.SquaresLayout
         android:id="@+id/squares"
-        android:background="#77f"
+        android:background="@drawable/nexus_wallpaper"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="true">
@@ -27,6 +27,6 @@
             android:padding="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ir"/>
+            android:text="Avançar"/>
     </com.infopicmob.transformer.view.SquaresLayout>
 </FrameLayout>
