@@ -24,6 +24,8 @@ public class AccordionLayout extends FrameLayout {
 
 	public AccordionLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
+
+		setWillNotDraw(false);
 	}
 
 	public void setFolding(float folding) {
@@ -47,15 +49,14 @@ public class AccordionLayout extends FrameLayout {
 	}
 
 	@Override
-	protected void dispatchDraw(Canvas canvas) {
+	public void draw(Canvas canvas) {
 		if (folding == 0) {
-			super.dispatchDraw(canvas);
+			super.draw(canvas);
 			return;
 		}
 
 		canvas.save();
-		matrix.setScale(1, 1 - folding, 0, getHeight());
-		canvas.concat(matrix);
+		canvas.scale(1, 1 - folding, 0, getHeight());
 
 		int parts = BENDS_COUNT * 2;
 		int partHeight = getHeight() / parts;
@@ -90,7 +91,7 @@ public class AccordionLayout extends FrameLayout {
 			canvas.concat(matrix);
 			canvas.clipRect(0, top, getWidth(), top + partHeight);
 
-			super.dispatchDraw(canvas);
+			super.draw(canvas);
 
 			Drawable shade = deepening ? deepenShade : shallowShade;
 			shade.setBounds(0, top, getWidth(), top + partHeight);
