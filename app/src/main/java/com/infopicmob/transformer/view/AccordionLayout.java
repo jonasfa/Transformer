@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
@@ -27,6 +29,21 @@ public class AccordionLayout extends FrameLayout {
 	public void setFolding(float folding) {
 		this.folding = Math.max(0, Math.min(folding, 1));
 		invalidate();
+	}
+
+	@Override
+	protected Parcelable onSaveInstanceState() {
+		Bundle ss = new Bundle();
+		ss.putParcelable("superState", super.onSaveInstanceState());
+		ss.putFloat("folding", folding);
+		return ss;
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Parcelable pState) {
+		Bundle ss = (Bundle) pState;
+		super.onRestoreInstanceState(ss.getParcelable("superState"));
+		folding = ss.getFloat("folding");
 	}
 
 	@Override
