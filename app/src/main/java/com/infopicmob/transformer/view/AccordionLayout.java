@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
@@ -38,16 +37,14 @@ public class AccordionLayout extends FrameLayout {
 		}
 
 		canvas.save();
-		matrix.setRectToRect(new RectF(0, 0, getWidth(), getHeight()), new RectF(0, getHeight() * (folding), getWidth(), getHeight()), Matrix.ScaleToFit.FILL);
+		matrix.setScale(1, 1 - folding, 0, getHeight());
 		canvas.concat(matrix);
 
 		int parts = BENDS_COUNT * 2;
 		int partHeight = getHeight() / parts;
 
-		originalPoly[0] = 0;
-		originalPoly[2] = getWidth();
-		originalPoly[4] = originalPoly[0];
-		originalPoly[6] = originalPoly[2];
+		originalPoly[0] = originalPoly[4] = 0;
+		originalPoly[2] = originalPoly[6] = getWidth();
 
 		float inPadding = partHeight / 2;
 
