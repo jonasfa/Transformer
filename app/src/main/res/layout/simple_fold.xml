@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center">
+
+    <com.infopicmob.transformer.view.SimpleFoldView
+        android:id="@+id/fold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/map"/>
+
+    <SeekBar
+        android:id="@+id/seek"
+        android:max="1000"
+        android:layout_marginTop="16dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="30"/>
+</LinearLayout>

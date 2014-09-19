@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.infopicmob.transformer.fragments.Door;
 import com.infopicmob.transformer.fragments.Map;
+import com.infopicmob.transformer.fragments.SimpleFold;
 import com.infopicmob.transformer.fragments.Squares;
 import com.infopicmob.transformer.widget.ClassNameArrayAdapter;
 
@@ -14,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity {
-	private final List<Fragment> fragments = Arrays.asList(new Squares(), new Map(), new Door());
+	private final List<Fragment> fragments = Arrays.asList(new SimpleFold(), new Squares(), new Map(), new Door());
 
 	@Override
 	@SuppressWarnings("ConstantConditions")
