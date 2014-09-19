@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity {
-	private final List<Fragment> fragments = Arrays.asList(new SimpleFold(), new Squares(), new Map());
+	private final List<Fragment> fragments = Arrays.asList(new Map(), new Squares(), new SimpleFold());
 
 	@Override
 	@SuppressWarnings("ConstantConditions")
